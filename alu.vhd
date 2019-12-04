@@ -6,14 +6,17 @@ entity alu is
 	generic (DATA_WIDTH	: natural := 32);
 	port (
 		A, B		: in	std_logic_vector(DATA_WIDTH-1 downto 0);
-		op			: in	std_logic_vector(3 downto 0);
+		opALU			: in	std_logic_vector(DATA_WIDTH-1 downto 0);
 		result	: out	std_logic_vector(DATA_WIDTH-1 downto 0)
+		zero	: out	std_logic_vector(DATA_WIDTH-1 downto 0)
 	);
 end entity alu;
 
 architecture behavioral of alu is
+	signal op: std_logic_vector(3 downto 0);
 begin
-	
+	op <= opALU(3 downto 0);
+	zero <= result;
 	op_case : process (A, B, op)
 	begin
 		case op is
