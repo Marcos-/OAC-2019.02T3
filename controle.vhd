@@ -14,6 +14,7 @@ port (
   EscreveMem : out    std_logic_vector(N-1 downto 0);
   Mem2Reg : out    std_logic_vector(N-1 downto 0);
   Branch   : out   std_logic_vector(N-1 downto 0));
+  JALR   : out   std_logic_vector(N-1 downto 0));
 end somador;
 architecture somador_arch of somador is
 begin
